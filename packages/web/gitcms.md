@@ -6,12 +6,20 @@ ssg_framework: astro
 frontmatter_format: yaml
 sitemap_url: https://opencode.ai/sitemap.xml
 publishing_mode: direct_publish
+i18n:
+  enabled: true
+  locales:
+    - en
+  default_locale: en
+  prefix_default_locale: true
 collections:
   - name: Docs
     git_path: /src/content/docs
     file_extension: .md
     filename_pattern: ""
     collection_type: grouped
+    i18n:
+      enabled: true
     frontmatter_schema:
       - name: title
         type: title
