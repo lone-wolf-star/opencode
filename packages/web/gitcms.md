@@ -1,7 +1,7 @@
 ---
 version: "1"
 website_url: https://opencode.ai/
-media_path: /src/
+media_path: /public/
 ssg_framework: astro
 frontmatter_format: yaml
 sitemap_url: https://opencode.ai/sitemap.xml
