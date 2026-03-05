@@ -11,7 +11,7 @@ collections:
     git_path: /src/content/docs
     file_extension: .md
     filename_pattern: ""
-    collection_type: flat
+    collection_type: grouped
     frontmatter_schema:
       - name: title
         type: title
