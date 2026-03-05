@@ -44,12 +44,6 @@ collections:
       - name: description
         type: richtext
         label: Description
-      - name: ""
-        type: multiselect
-        options:
-          - asdfds
-          - sdafdf
-        color: yellow
 ---
 
 # GitCMS Configuration File
