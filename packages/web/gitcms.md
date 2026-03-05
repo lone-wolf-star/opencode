@@ -10,8 +10,25 @@ i18n:
   enabled: true
   locales:
     - en
+    - ar
+    - bs
+    - da
+    - de
+    - es
+    - fr
+    - it
+    - ja
+    - ko
+    - nb
+    - pl
+    - pt-br
+    - ru
+    - th
+    - tr
+    - zh-cn
+    - zh-tw
   default_locale: en
-  prefix_default_locale: true
+  prefix_default_locale: false
 collections:
   - name: Docs
     git_path: /src/content/docs
@@ -27,6 +44,12 @@ collections:
       - name: description
         type: richtext
         label: Description
+      - name: ""
+        type: multiselect
+        options:
+          - asdfds
+          - sdafdf
+        color: yellow
 ---
 
 # GitCMS Configuration File
