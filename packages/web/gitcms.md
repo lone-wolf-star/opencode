@@ -5,7 +5,7 @@ media_path: /public/
 ssg_framework: astro
 frontmatter_format: yaml
 sitemap_url: https://opencode.ai/sitemap.xml
-publishing_mode: direct_publish
+publishing_mode: editorial_workflow
 i18n:
   enabled: true
   locales:
