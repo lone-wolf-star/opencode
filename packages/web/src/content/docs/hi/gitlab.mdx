@@ -1,15 +1,9 @@
 ---
 title: GitLab
-description: GitLab issues और merge requests में OpenCode का उपयोग करें।
----
-
-OpenCode आपके GitLab CI/CD pipeline या GitLab Duo के माध्यम से आपके GitLab वर्कफ़्लो के साथ इंटीग्रेट होता है।
-
+description: GitLab में OpenCode का उपयोग।
 ---
 
 ## GitLab CI
-
-OpenCode एक नियमित GitLab pipeline में काम करता है।
 
 ```yaml
 include:
@@ -18,30 +12,10 @@ include:
       auth_json: $OPENCODE_AUTH_JSON
 ```
 
----
-
 ## GitLab Duo
 
-GitLab comment में `@opencode` mention करें।
-
----
-
-## उदाहरण
-
-### Issue समझाएं
+Comment में `@opencode` mention करें।
 
 ```
 @opencode explain this issue
-```
-
-### Issue fix करें
-
-```
-@opencode fix this
-```
-
-### Merge request review करें
-
-```
-@opencode review this merge request
 ```
