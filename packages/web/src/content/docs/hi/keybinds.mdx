@@ -1,46 +1,16 @@
 ---
 title: कीबिंड्स
-description: अपने keybinds कस्टमाइज़ करें।
+description: Keybinds कस्टमाइज़ करें।
 ---
 
-OpenCode की एक सूची है जिसे आप OpenCode कॉन्फ़िग के माध्यम से कस्टमाइज़ कर सकते हैं।
+## Leader key
 
----
-
-## लीडर की
-
-OpenCode अधिकांश keybinds के लिए एक `leader` key का उपयोग करता है।
-
-डिफ़ॉल्ट रूप से, `ctrl+x` leader key है।
+डिफ़ॉल्ट: `ctrl+x`
 
 ---
 
-## Keybind अक्षम करें
-
-`"none"` value के साथ key अक्षम करें:
+## अक्षम करें
 
 ```json
-{
-  "keybinds": {
-    "session_compact": "none"
-  }
-}
+{"keybinds": {"session_compact": "none"}}
 ```
-
----
-
-## डेस्कटॉप प्रोम्पट शॉर्टकट
-
-OpenCode desktop app प्रोम्पट इनपुट common Readline/Emacs-style शॉर्टकट का समर्थन करता है:
-
-| शॉर्टकट | कार्रवाई |
-|---------|---------|
-| ctrl+a | Line की शुरुआत में जाएं |
-| ctrl+e | Line के अंत में जाएं |
-| ctrl+b | एक character पीछे |
-| ctrl+f | एक character आगे |
-| alt+b | एक word पीछे |
-| alt+f | एक word आगे |
-| ctrl+d | character हटाएं |
-| ctrl+k | line के अंत तक हटाएं |
-| ctrl+u | line की शुरुआत तक हटाएं |
