@@ -1,0 +1,114 @@
+---
+title: परिचय
+description: OpenCode के साथ शुरुआत करें।
+---
+
+import { Tabs, TabItem } from "@astrojs/starlight/components"
+import config from "../../../config.mjs"
+export const console = config.console
+
+[**OpenCode**](/) एक ओपन सोर्स AI कोडिंग एजेंट है। यह टर्मिनल-आधारित इंटरफ़ेस, डेस्कटॉप ऐप या IDE एक्सटेंशन के रूप में उपलब्ध है।
+
+![OpenCode TUI with the opencode theme](../../assets/lander/screenshot.png)
+
+आइए शुरुआत करें।
+
+---
+
+#### आवश्यकताएँ
+
+टर्मिनल में OpenCode उपयोग करने के लिए आपको चाहिए:
+
+1. एक आधुनिक टर्मिनल एमुलेटर, जैसे:
+   - [WezTerm](https://wezterm.org), cross‑platform
+   - [Alacritty](https://alacritty.org), cross‑platform
+   - [Ghostty](https://ghostty.org), Linux और macOS
+   - [Kitty](https://sw.kovidgoyal.net/kitty/), Linux और macOS
+
+2. जिन LLM प्रदाताओं का आप उपयोग करना चाहते हैं उनके API keys।
+
+---
+
+## इंस्टॉल करें
+
+OpenCode इंस्टॉल करने का सबसे आसान तरीका install script है।
+
+```bash
+curl -fsSL https://opencode.ai/install | bash
+```
+
+आप इसे निम्न कमांड्स से भी इंस्टॉल कर सकते हैं:
+
+- **Node.js का उपयोग करके**
+
+<Tabs>
+<TabItem label="npm">
+```bash
+npm install -g opencode-ai
+```
+</TabItem>
+<TabItem label="Bun">
+```bash
+bun install -g opencode-ai
+```
+</TabItem>
+<TabItem label="pnpm">
+```bash
+pnpm install -g opencode-ai
+```
+</TabItem>
+<TabItem label="Yarn">
+```bash
+yarn global add opencode-ai
+```
+</TabItem>
+</Tabs>
+
+- **macOS और Linux पर Homebrew का उपयोग करके**
+
+```bash
+brew install anomalyco/tap/opencode
+```
+
+- **Arch Linux पर इंस्टॉल करना**
+
+```bash
+sudo pacman -S opencode
+paru -S opencode-bin
+```
+
+#### Windows
+
+:::tip[Recommended: Use WSL]
+Windows पर बेहतर अनुभव के लिए हम [Windows Subsystem for Linux (WSL)](/docs/windows-wsl) उपयोग करने की सलाह देते हैं।
+:::
+
+- **Chocolatey का उपयोग करके**
+
+```bash
+choco install opencode
+```
+
+- **Scoop का उपयोग करके**
+
+```bash
+scoop install opencode
+```
+
+- **NPM का उपयोग करके**
+
+```bash
+npm install -g opencode-ai
+```
+
+- **Docker का उपयोग करके**
+
+```bash
+docker run -it --rm ghcr.io/anomalyco/opencode
+```
+
+---
+
+## उपयोग
+
+अब आप OpenCode का उपयोग अपने प्रोजेक्ट पर काम करने के लिए कर सकते हैं।
