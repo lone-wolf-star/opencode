@@ -1,0 +1,73 @@
+---
+title: मॉडल
+description: LLM प्रोवाइडर और मॉडल कॉन्फ़िगर करना।
+---
+
+OpenCode 75+ LLM प्रोवाइडर का समर्थन करता है और local मॉडल चलाना भी support करता है।
+
+---
+
+## प्रोवाइडर
+
+अधिकांश लोकप्रिय प्रोवाइडर डिफ़ॉल्ट रूप से preload होते हैं।
+
+---
+
+## मॉडल चुनें
+
+मॉडल चुनने के लिए:
+
+```bash
+/models
+```
+
+---
+
+## अनुशंसित मॉडल
+
+कई मॉडल हैं जो OpenCode के साथ अच्छे से काम करते हैं:
+
+- GPT 5.2
+- GPT 5.1 Codex
+- Claude Opus 4.5
+- Claude Sonnet 4.5
+- Gemini 3 Pro
+
+---
+
+## डिफ़ॉल्ट सेट करें
+
+मॉडल सेट करने के लिए:
+
+```json
+{
+  "model": "anthropic/claude-sonnet-4-5"
+}
+```
+
+---
+
+## वेरिएंट
+
+कई मॉडल multiple variants support करते हैं:
+
+```json
+{
+  "provider": {
+    "openai": {
+      "models": {
+        "gpt-5": {
+          "variants": {
+            "high": {
+              "reasoningEffort": "high"
+            },
+            "low": {
+              "reasoningEffort": "low"
+            }
+          }
+        }
+      }
+    }
+  }
+}
+```
