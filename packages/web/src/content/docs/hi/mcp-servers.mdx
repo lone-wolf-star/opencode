@@ -1,0 +1,96 @@
+---
+title: MCP सर्वर
+description: Local और remote MCP टूल जोड़ें।
+---
+
+आप Model Context Protocol (MCP) का उपयोग करके OpenCode में external टूल जोड़ सकते हैं।
+
+---
+
+## सक्षम करें
+
+MCP सर्वर अपने OpenCode कॉन्फ़िग में परिभाषित करें:
+
+```json
+{
+  "mcp": {
+    "my-mcp-server": {
+      "type": "local",
+      "command": ["npx", "-y", "my-mcp-command"],
+      "enabled": true
+    }
+  }
+}
+```
+
+---
+
+## Local
+
+Local MCP सर्वर जोड़ें:
+
+```json
+{
+  "mcp": {
+    "my-server": {
+      "type": "local",
+      "command": ["npx", "-y", "@modelcontextprotocol/server-everything"]
+    }
+  }
+}
+```
+
+---
+
+## Remote
+
+Remote MCP सर्वर जोड़ें:
+
+```json
+{
+  "mcp": {
+    "my-remote": {
+      "type": "remote",
+      "url": "https://my-mcp-server.com",
+      "enabled": true
+    }
+  }
+}
+```
+
+---
+
+## OAuth
+
+OpenCode remote MCP सर्वर के लिए OAuth authentication स्वचालित रूप से handle करता है।
+
+---
+
+## उदाहरण
+
+### Sentry
+
+```json
+{
+  "mcp": {
+    "sentry": {
+      "type": "remote",
+      "url": "https://mcp.sentry.dev/mcp",
+      "oauth": {}
+    }
+  }
+}
+```
+
+### Context7
+
+```json
+{
+  "mcp": {
+    "context7": {
+      "type": "remote",
+      "url": "https://mcp.context7.com/mcp"
+    }
+  }
+}
+```
