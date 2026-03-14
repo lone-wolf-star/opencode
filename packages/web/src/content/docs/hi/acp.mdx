@@ -1,0 +1,65 @@
+---
+title: ACP
+description: Agentic Computing Protocol - OpenCode के साथ MCP सर्वर बनाएं।
+---
+
+ACP (Agentic Computing Protocol) MCP सर्वर बनाने का एक तरीका है जो OpenCode के साथ काम करता है।
+
+---
+
+## ACP सर्वर शुरू करें
+
+```bash
+opencode acp
+```
+
+---
+
+## कॉन्फ़िगर
+
+ACP सर्वर अपने OpenCode कॉन्फ़िग में परिभाषित करें:
+
+```json
+{
+  "mcp": {
+    "my-acp-server": {
+      "type": "local",
+      "command": ["npx", "-y", "my-acp-package"]
+    }
+  }
+}
+```
+
+---
+
+## उदाहरण
+
+ACP सर्वर बनाने के लिए, MCP SDK का उपयोग करें:
+
+```typescript
+import { Server } from "@modelcontextprotocol/sdk/server/index.js"
+
+const server = new Server({
+  name: "my-acp-server",
+  version: "1.0.0"
+}, {
+  capabilities: {
+    tools: {}
+  }
+})
+
+server.setRequestHandler("tools/list", async () => {
+  return {
+    tools: [{
+      name: "my_tool",
+      description: "A custom tool",
+      inputSchema: {
+        type: "object",
+        properties: {
+          message: { type: "string" }
+        }
+      }
+    }]
+  }
+})
+```
