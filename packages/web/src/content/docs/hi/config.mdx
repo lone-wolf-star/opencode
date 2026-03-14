@@ -1,0 +1,214 @@
+---
+title: कॉन्फ़िग
+description: OpenCode JSON कॉन्फ़िग का उपयोग करना।
+---
+
+आप JSON कॉन्फ़िग फ़ाइल से OpenCode कॉन्फ़िगर कर सकते हैं।
+
+---
+
+## फॉर्मेट
+
+OpenCode JSON और JSONC (comments के साथ JSON) दोनों का समर्थन करता है:
+
+```jsonc
+{
+  "$schema": "https://opencode.ai/config.json",
+  "theme": "opencode",
+  "model": "anthropic/claude-sonnet-4-5"
+}
+```
+
+---
+
+## स्थान
+
+कॉन्फ़िग कई स्थानों पर रखा जा सकता है:
+
+### क्रम
+
+1. Remote कॉन्फ़िग (`.well-known/opencode`)
+2. Global कॉन्फ़िग (`~/.config/opencode/opencode.json`)
+3. Custom कॉन्फ़िग (`OPENCODE_CONFIG` env var)
+4. Project कॉन्फ़िग (`opencode.json`)
+5. `.opencode` डायरेक्टरीज़
+6. Inline कॉन्फ़िग (`OPENCODE_CONFIG_CONTENT` env var)
+
+---
+
+## स्कीमा
+
+कॉन्फ़िग फ़ाइल में स्कीमा है: **opencode.ai/config.json**
+
+आपका एडिटर स्कीमा के आधार पर validate और autocomplete कर सकता है।
+
+---
+
+## विकल्प
+
+### TUI
+
+TUI-विशिष्ट सेटिंग्स:
+
+```json
+{
+  "tui": {
+    "scroll_speed": 3,
+    "diff_style": "auto"
+  }
+}
+```
+
+### सर्वर
+
+`opencode serve` और `opencode web` के लिए सर्वर सेटिंग्स:
+
+```json
+{
+  "server": {
+    "port": 4096,
+    "hostname": "0.0.0.0",
+    "mdns": true
+  }
+}
+```
+
+### टूल्स
+
+LLM द्वारा उपयोग किए जा सकने वाले टूल प्रबंधित करें:
+
+```json
+{
+  "tools": {
+    "write": false,
+    "bash": false
+  }
+}
+```
+
+### मॉडल
+
+प्रोवाइडर और मॉडल कॉन्फ़िगर करें:
+
+```json
+{
+  "model": "anthropic/claude-sonnet-4-5",
+  "small_model": "anthropic/claude-haiku-4-5"
+}
+```
+
+### थीम
+
+थीम चुनें:
+
+```json
+{
+  "theme": "opencode"
+}
+```
+
+### एजेंट
+
+विशेषज्ञ एजेंट कॉन्फ़िगर करें:
+
+```json
+{
+  "agent": {
+    "code-reviewer": {
+      "description": "Code review",
+      "model": "anthropic/claude-sonnet-4-5"
+    }
+  }
+}
+```
+
+### शेयर
+
+शेयर फीचर कॉन्फ़िगर करें:
+
+```json
+{
+  "share": "manual"
+}
+```
+
+- `manual`: मैन्युअल शेयर (डिफ़ॉल्ट)
+- `auto`: स्वचालित शेयर
+- `disabled`: शेयर अक्षम
+
+### अनुमतियाँ
+
+ऑपरेशन के लिए अनुमति नियंत्रित करें:
+
+```json
+{
+  "permission": {
+    "edit": "ask",
+    "bash": "ask"
+  }
+}
+```
+
+### अपडेट
+
+स्वचालित अपडेट अक्षम करें:
+
+```json
+{
+  "autoupdate": false
+}
+```
+
+### MCP सर्वर
+
+MCP सर्वर कॉन्फ़िगर करें:
+
+```json
+{
+  "mcp": {}
+}
+```
+
+### प्लगइन
+
+प्लगइन लोड करें:
+
+```json
+{
+  "plugin": ["opencode-helicone-session"]
+}
+```
+
+### निर्देश
+
+मॉडल के लिए निर्देश:
+
+```json
+{
+  "instructions": ["CONTRIBUTING.md", "docs/guidelines.md"]
+}
+```
+
+---
+
+## वेरिएबल्स
+
+### Env vars
+
+`{env:VARIABLE_NAME}` का उपयोग करें:
+
+```json
+{
+  "model": "{env:OPENCODE_MODEL}"
+}
+```
+
+### फ़ाइलें
+
+`{file:path/to/file}` का उपयोग करें:
+
+```json
+{
+  "instructions": ["./custom-instructions.md"]
+}
+```
