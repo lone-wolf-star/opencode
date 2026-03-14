@@ -1,0 +1,52 @@
+---
+title: एजेंट स्किल्स
+description: SKILL.md परिभाषाओं द्वारा पुन: प्रयोज्य व्यवहार परिभाषित करें।
+---
+
+Agent skills OpenCode को आपके repo या home directory से पुन: प्रयोज्य निर्देश खोजने की अनुमति देती हैं।
+
+---
+
+## फ़ाइलें रखें
+
+प्रति skill name एक folder बनाएं और उसके अंदर `SKILL.md` रखें:
+- Project: `.opencode/skills/<name>/SKILL.md`
+- Global: `~/.config/opencode/skills/<name>/SKILL.md`
+
+---
+
+## Frontmatter लिखें
+
+प्रत्येक `SKILL.md` YAML frontmatter से शुरू होना चाहिए:
+
+```yaml
+---
+name: git-release
+description: Create consistent releases and changelogs
+---
+```
+
+आवश्यक फ़ील्ड: `name`, `description`
+
+---
+
+## उपयोग
+
+```txt
+skill({ name: "git-release" })
+```
+
+---
+
+## अनुमतियाँ कॉन्फ़िगर करें
+
+```json
+{
+  "permission": {
+    "skill": {
+      "*": "allow",
+      "internal-*": "deny"
+    }
+  }
+}
+```
