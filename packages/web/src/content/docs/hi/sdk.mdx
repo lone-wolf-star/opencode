@@ -1,0 +1,84 @@
+---
+title: SDK
+description: OpenCode सर्वर के लिए type-safe JS क्लाइंट।
+---
+
+OpenCode JS/TS SDK server के साथ इंटरैक्ट करने के लिए type-safe क्लाइंट प्रदान करता है।
+
+---
+
+## इंस्टॉल
+
+```bash
+npm install @opencode-ai/sdk
+```
+
+---
+
+## क्लाइंट बनाएं
+
+```javascript
+import { createOpencode } from "@opencode-ai/sdk"
+
+const { client } = await createOpencode()
+```
+
+---
+
+## कॉन्फ़िगर
+
+```javascript
+const opencode = await createOpencode({
+  config: {
+    model: "anthropic/claude-sonnet-4-20250514"
+  }
+})
+```
+
+---
+
+## APIs
+
+### Session
+
+```javascript
+const sessions = await client.session.list()
+const result = await client.session.prompt({
+  path: { id: sessionId },
+  body: { parts: [{ type: "text", text: "Hello!" }] }
+})
+```
+
+### Files
+
+```javascript
+const content = await client.file.read({ query: { path: "src/index.ts" } })
+```
+
+### Config
+
+```javascript
+const config = await client.config.get()
+```
+
+---
+
+## Structured Output
+
+```typescript
+const result = await client.session.prompt({
+  path: { id: sessionId },
+  body: {
+    parts: [{ type: "text", text: "Provide info" }],
+    format: {
+      type: "json_schema",
+      schema: {
+        type: "object",
+        properties: {
+          company: { type: "string" }
+        }
+      }
+    }
+  }
+})
+```
