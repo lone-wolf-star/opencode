@@ -1,60 +1,19 @@
 ---
 title: सर्वर
-description: HTTP पर OpenCode सर्वर के साथ इंटरैक्ट करें।
+description: HTTP सर्वर।
 ---
 
-`opencode serve` कमांड एक headless HTTP सर्वर चलाता है।
-
----
-
-## उपयोग
+## शुरू करें
 
 ```bash
-opencode serve --port 4096 --hostname 0.0.0.0
-```
-
-### विकल्प
-
-| फ्लैग | विवरण | डिफ़ॉल्ट |
-|--------|--------|-----------|
-| `--port` | पोर्ट | 4096 |
-| `--hostname` | होस्टनेम | 127.0.0.1 |
-| `--mdns` | mDNS discovery सक्षम करें | false |
-| `--cors` | अतिरिक्त browser origins | [] |
-
----
-
-## प्रमाणीकरण
-
-HTTP basic auth के लिए:
-
-```bash
-OPENCODE_SERVER_PASSWORD=your-password opencode serve
+opencode serve --port 4096
 ```
 
 ---
 
 ## APIs
 
-### Sessions
-
-| मेथड | पाथ | विवरण |
-|-------|------|--------|
-| GET | `/session` | सभी सत्र सूचीबद्ध करें |
-| POST | `/session` | नया सत्र बनाएं |
-| GET | `/session/:id` | सत्र विवरण प्राप्त करें |
-| DELETE | `/session/:id` | सत्र हटाएं |
-
-### Messages
-
-| मेथड | पाथ | विवरण |
-|-------|------|--------|
-| POST | `/session/:id/message` | संदेश भेजें और प्रतीक्षा करें |
-| GET | `/session/:id/message` | सत्र में संदेश सूचीबद्ध करें |
-
-### Files
-
-| मेथड | पाथ | विवरण |
-|-------|------|--------|
-| GET | `/file/content` | फ़ाइल पढ़ें |
-| GET | `/find` | फ़ाइलों में टेक्स्ट खोजें |
+- `/session`: सत्र सूची
+- `/session/:id`: सत्र विवरण
+- `/session/:id/message`: संदेश
+- `/file/content`: फ़ाइल पढ़ें
