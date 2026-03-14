@@ -1,69 +1,20 @@
 ---
 title: LSP सर्वर
-description: OpenCode आपके LSP सर्वर के साथ इंटीग्रेट होता है।
----
-
-OpenCode Language Server Protocol (LSP) के साथ इंटीग्रेट होता है।
-
+description: Language Server Protocol।
 ---
 
 ## बिल्ट-इन
 
-OpenCode कई बिल्ट-in LSP सर्वर के साथ आता है:
-
-| LSP सर्वर | एक्सटेंशन |
-|----------|-----------|
-| astro | .astro |
-| typescript | .ts, .tsx |
-| eslint | .js, .jsx, .ts, .tsx |
-| rust | .rs |
-| gopls | .go |
-| pyright | .py |
-| ruby-lsp | .rb |
+- typescript
+- eslint
+- rust (rust-analyzer)
+- gopls
+- pyright
 
 ---
 
 ## कॉन्फ़िगर
 
-LSP सर्वर कॉन्फ़िगर करें:
-
 ```json
-{
-  "lsp": {}
-}
-```
-
-### अक्षम करें
-
-सभी LSP अक्षम करें:
-
-```json
-{
-  "lsp": false
-}
-```
-
-विशिष्ट LSP अक्षम करें:
-
-```json
-{
-  "lsp": {
-    "typescript": {
-      "disabled": true
-    }
-  }
-}
-```
-
-### कस्टम LSP
-
-```json
-{
-  "lsp": {
-    "custom-lsp": {
-      "command": ["custom-lsp-server", "--stdio"],
-      "extensions": [".custom"]
-    }
-  }
-}
+{"lsp": {"typescript": {"disabled": true}}}
 ```
