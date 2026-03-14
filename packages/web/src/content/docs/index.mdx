@@ -1,334 +1,255 @@
 ---
-title: Intro
-description: Get started with OpenCode.
+title: परिचय
+description: OpenCode के साथ शुरुआत करें।
 ---
 
 import { Tabs, TabItem } from "@astrojs/starlight/components"
 import config from "../../../config.mjs"
 export const console = config.console
 
-[**OpenCode**](/) is an open source AI coding agent. It's available as a terminal-based interface, desktop app, or IDE extension.
+[**OpenCode**](/) एक ओपन सोर्स AI कोडिंग एजेंट है। यह टर्मिनल-आधारित इंटरफ़ेस, डेस्कटॉप ऐप या IDE एक्सटेंशन के रूप में उपलब्ध है।
 
 ![OpenCode TUI with the opencode theme](../../assets/lander/screenshot.png)
 
-Let's get started.
+आइए शुरुआत करें।
 
 ---
 
-#### Prerequisites
+#### आवश्यकताएँ
 
-To use OpenCode in your terminal, you'll need:
+टर्मिनल में OpenCode उपयोग करने के लिए आपको चाहिए:
 
-1. A modern terminal emulator like:
-   - [WezTerm](https://wezterm.org), cross-platform
-   - [Alacritty](https://alacritty.org), cross-platform
-   - [Ghostty](https://ghostty.org), Linux and macOS
-   - [Kitty](https://sw.kovidgoyal.net/kitty/), Linux and macOS
+1. एक आधुनिक टर्मिनल एमुलेटर, जैसे:
+   - [WezTerm](https://wezterm.org), cross‑platform
+   - [Alacritty](https://alacritty.org), cross‑platform
+   - [Ghostty](https://ghostty.org), Linux और macOS
+   - [Kitty](https://sw.kovidgoyal.net/kitty/), Linux और macOS
 
-2. API keys for the LLM providers you want to use.
+2. जिन LLM प्रदाताओं का आप उपयोग करना चाहते हैं उनके API keys।
 
 ---
 
-## Install
+## इंस्टॉल करें
 
-The easiest way to install OpenCode is through the install script.
+OpenCode इंस्टॉल करने का सबसे आसान तरीका install script है।
 
 ```bash
 curl -fsSL https://opencode.ai/install | bash
 ```
 
-You can also install it with the following commands:
+आप इसे निम्न कमांड्स से भी इंस्टॉल कर सकते हैं:
 
-- **Using Node.js**
+- **Node.js का उपयोग करके**
 
-        <Tabs>
+<Tabs>
 
-      <TabItem label="npm">
-      ```bash
-      npm install -g opencode-ai
-      ```
+<TabItem label="npm">
 
-          </TabItem>
+```bash
+npm install -g opencode-ai
+```
 
-        <TabItem label="Bun">
-        ```bash
-        bun install -g opencode-ai
-        ```
+</TabItem>
 
-          </TabItem>
+<TabItem label="Bun">
 
-        <TabItem label="pnpm">
-        ```bash
-        pnpm install -g opencode-ai
-        ```
+```bash
+bun install -g opencode-ai
+```
 
-          </TabItem>
+</TabItem>
 
-        <TabItem label="Yarn">
-        ```bash
-        yarn global add opencode-ai
-        ```
+<TabItem label="pnpm">
 
-      </TabItem>
+```bash
+pnpm install -g opencode-ai
+```
 
-  </Tabs>
+</TabItem>
 
-- **Using Homebrew on macOS and Linux**
+<TabItem label="Yarn">
 
-  ```bash
-  brew install anomalyco/tap/opencode
-  ```
+```bash
+yarn global add opencode-ai
+```
 
-  > We recommend using the OpenCode tap for the most up to date releases. The official `brew install opencode` formula is maintained by the Homebrew team and is updated less frequently.
+</TabItem>
 
-- **Installing on Arch Linux**
+</Tabs>
 
-  ```bash
-  sudo pacman -S opencode           # Arch Linux (Stable)
-  paru -S opencode-bin              # Arch Linux (Latest from AUR)
-  ```
+- **macOS और Linux पर Homebrew का उपयोग करके**
+
+```bash
+brew install anomalyco/tap/opencode
+```
+
+> नवीनतम रिलीज़ के लिए OpenCode tap उपयोग करने की सलाह दी जाती है। आधिकारिक `brew install opencode` formula Homebrew टीम द्वारा maintain किया जाता है और कम बार अपडेट होता है।
+
+- **Arch Linux पर इंस्टॉल करना**
+
+```bash
+sudo pacman -S opencode
+paru -S opencode-bin
+```
 
 #### Windows
 
 :::tip[Recommended: Use WSL]
-For the best experience on Windows, we recommend using [Windows Subsystem for Linux (WSL)](/docs/windows-wsl). It provides better performance and full compatibility with OpenCode's features.
+Windows पर बेहतर अनुभव के लिए हम [Windows Subsystem for Linux (WSL)](/docs/windows-wsl) उपयोग करने की सलाह देते हैं।
 :::
 
-- **Using Chocolatey**
+- **Chocolatey का उपयोग करके**
 
-  ```bash
-  choco install opencode
-  ```
+```bash
+choco install opencode
+```
 
-- **Using Scoop**
+- **Scoop का उपयोग करके**
 
-  ```bash
-  scoop install opencode
-  ```
+```bash
+scoop install opencode
+```
 
-- **Using NPM**
+- **NPM का उपयोग करके**
 
-  ```bash
-  npm install -g opencode-ai
-  ```
+```bash
+npm install -g opencode-ai
+```
 
-- **Using Mise**
+- **Mise का उपयोग करके**
 
-  ```bash
-  mise use -g github:anomalyco/opencode
-  ```
+```bash
+mise use -g github:anomalyco/opencode
+```
 
-- **Using Docker**
+- **Docker का उपयोग करके**
 
-  ```bash
-  docker run -it --rm ghcr.io/anomalyco/opencode
-  ```
+```bash
+docker run -it --rm ghcr.io/anomalyco/opencode
+```
 
-Support for installing OpenCode on Windows using Bun is currently in progress.
-
-You can also grab the binary from the [Releases](https://github.com/anomalyco/opencode/releases).
+आप [Releases](https://github.com/anomalyco/opencode/releases) से binary भी डाउनलोड कर सकते हैं।
 
 ---
 
-## Configure
+## कॉन्फ़िगर करें
 
-With OpenCode you can use any LLM provider by configuring their API keys.
+OpenCode के साथ आप किसी भी LLM provider का उपयोग कर सकते हैं उनके API keys कॉन्फ़िगर करके।
 
-If you are new to using LLM providers, we recommend using [OpenCode Zen](/docs/zen).
-It's a curated list of models that have been tested and verified by the OpenCode
-team.
+यदि आप LLM providers के लिए नए हैं, तो हम [OpenCode Zen](/docs/zen) उपयोग करने की सलाह देते हैं।
 
-1. Run the `/connect` command in the TUI, select opencode, and head to [opencode.ai/auth](https://opencode.ai/auth).
+1. TUI में `/connect` कमांड चलाएँ और opencode चुनें।
 
-   ```txt
-   /connect
-   ```
+```txt
+/connect
+```
 
-2. Sign in, add your billing details, and copy your API key.
+2. साइन इन करें, billing details जोड़ें, और API key कॉपी करें।
 
-3. Paste your API key.
+3. अपनी API key पेस्ट करें।
 
-   ```txt
-   ┌ API key
-   │
-   │
-   └ enter
-   ```
-
-Alternatively, you can select one of the other providers. [Learn more](/docs/providers#directory).
+```txt
+┌ API key
+│
+│
+└ enter
+```
 
 ---
 
 ## Initialize
 
-Now that you've configured a provider, you can navigate to a project that
-you want to work on.
+अब जब आपने provider कॉन्फ़िगर कर लिया है, उस प्रोजेक्ट डायरेक्टरी में जाएँ जिस पर आप काम करना चाहते हैं।
 
 ```bash
 cd /path/to/project
 ```
 
-And run OpenCode.
+फिर OpenCode चलाएँ:
 
 ```bash
 opencode
 ```
 
-Next, initialize OpenCode for the project by running the following command.
+और निम्न कमांड से OpenCode को प्रोजेक्ट के लिए initialize करें:
 
-```bash frame="none"
+```bash
 /init
 ```
 
-This will get OpenCode to analyze your project and create an `AGENTS.md` file in
-the project root.
+यह आपके प्रोजेक्ट को analyze करेगा और project root में `AGENTS.md` फ़ाइल बनाएगा।
 
 :::tip
-You should commit your project's `AGENTS.md` file to Git.
+अपने प्रोजेक्ट की `AGENTS.md` फ़ाइल को Git में commit करना चाहिए।
 :::
-
-This helps OpenCode understand the project structure and the coding patterns
-used.
 
 ---
 
-## Usage
+## उपयोग
 
-You are now ready to use OpenCode to work on your project. Feel free to ask it
-anything!
-
-If you are new to using an AI coding agent, here are some examples that might
-help.
+अब आप OpenCode का उपयोग अपने प्रोजेक्ट पर काम करने के लिए कर सकते हैं।
 
 ---
 
-### Ask questions
+### सवाल पूछें
 
-You can ask OpenCode to explain the codebase to you.
+आप OpenCode से codebase समझाने के लिए पूछ सकते हैं।
 
 :::tip
-Use the `@` key to fuzzy search for files in the project.
+प्रोजेक्ट की files खोजने के लिए `@` का उपयोग करें।
 :::
 
-```txt frame="none" "@packages/functions/src/api/index.ts"
+```txt
 How is authentication handled in @packages/functions/src/api/index.ts
 ```
 
-This is helpful if there's a part of the codebase that you didn't work on.
-
 ---
 
-### Add features
+### फीचर जोड़ें
 
-You can ask OpenCode to add new features to your project. Though we first recommend asking it to create a plan.
+आप OpenCode से नए features बनाने के लिए कह सकते हैं। पहले उससे एक plan बनवाना बेहतर होता है।
 
-1. **Create a plan**
+1. **Plan बनाएं**
 
-   OpenCode has a _Plan mode_ that disables its ability to make changes and
-   instead suggest _how_ it'll implement the feature.
+Plan mode में OpenCode बदलाव नहीं करता बल्कि implementation का सुझाव देता है।
 
-   Switch to it using the **Tab** key. You'll see an indicator for this in the lower right corner.
-
-   ```bash frame="none" title="Switch to Plan mode"
-   <TAB>
-   ```
-
-   Now let's describe what we want it to do.
-
-   ```txt frame="none"
-   When a user deletes a note, we'd like to flag it as deleted in the database.
-   Then create a screen that shows all the recently deleted notes.
-   From this screen, the user can undelete a note or permanently delete it.
-   ```
-
-   You want to give OpenCode enough details to understand what you want. It helps
-   to talk to it like you are talking to a junior developer on your team.
-
-   :::tip
-   Give OpenCode plenty of context and examples to help it understand what you
-   want.
-   :::
-
-2. **Iterate on the plan**
-
-   Once it gives you a plan, you can give it feedback or add more details.
-
-   ```txt frame="none"
-   We'd like to design this new screen using a design I've used before.
-   [Image #1] Take a look at this image and use it as a reference.
-   ```
-
-   :::tip
-   Drag and drop images into the terminal to add them to the prompt.
-   :::
-
-   OpenCode can scan any images you give it and add them to the prompt. You can
-   do this by dragging and dropping an image into the terminal.
-
-3. **Build the feature**
-
-   Once you feel comfortable with the plan, switch back to _Build mode_ by
-   hitting the **Tab** key again.
-
-   ```bash frame="none"
-   <TAB>
-   ```
-
-   And asking it to make the changes.
-
-   ```bash frame="none"
-   Sounds good! Go ahead and make the changes.
-   ```
-
----
-
-### Make changes
-
-For more straightforward changes, you can ask OpenCode to directly build it
-without having to review the plan first.
-
-```txt frame="none" "@packages/functions/src/settings.ts" "@packages/functions/src/notes.ts"
-We need to add authentication to the /settings route. Take a look at how this is
-handled in the /notes route in @packages/functions/src/notes.ts and implement
-the same logic in @packages/functions/src/settings.ts
+```bash
+<TAB>
 ```
 
-You want to make sure you provide a good amount of detail so OpenCode makes the right
-changes.
+फिर बताएं कि आप क्या बनाना चाहते हैं।
+
+```txt
+When a user deletes a note, flag it as deleted in the database and create a screen to view and restore deleted notes.
+```
+
+2. **Plan पर iterate करें**
+
+OpenCode के plan पर feedback दें या और विवरण जोड़ें।
+
+3. **Feature बनवाएँ**
+
+Build mode में वापस जाएँ:
+
+```bash
+<TAB>
+```
+
+और OpenCode से बदलाव करने के लिए कहें।
 
 ---
 
-### Undo changes
+### बदलाव undo करें
 
-Let's say you ask OpenCode to make some changes.
+अगर OpenCode ने गलत बदलाव कर दिए हों तो आप `/undo` कमांड से उन्हें revert कर सकते हैं।
 
-```txt frame="none" "@packages/functions/src/api/index.ts"
-Can you refactor the function in @packages/functions/src/api/index.ts?
-```
-
-But you realize that it is not what you wanted. You **can undo** the changes
-using the `/undo` command.
-
-```bash frame="none"
+```bash
 /undo
 ```
 
-OpenCode will now revert the changes you made and show your original message
-again.
+और `/redo` से दोबारा लागू कर सकते हैं।
 
-```txt frame="none" "@packages/functions/src/api/index.ts"
-Can you refactor the function in @packages/functions/src/api/index.ts?
-```
-
-From here you can tweak the prompt and ask OpenCode to try again.
-
-:::tip
-You can run `/undo` multiple times to undo multiple changes.
-:::
-
-Or you **can redo** the changes using the `/redo` command.
-
-```bash frame="none"
+```bash
 /redo
 ```
 
@@ -336,25 +257,14 @@ Or you **can redo** the changes using the `/redo` command.
 
 ## Share
 
-The conversations that you have with OpenCode can be [shared with your
-team](/docs/share).
+आप OpenCode के साथ हुई conversations अपनी टीम के साथ साझा कर सकते हैं।
 
-```bash frame="none"
+```bash
 /share
 ```
-
-This will create a link to the current conversation and copy it to your clipboard.
-
-:::note
-Conversations are not shared by default.
-:::
-
-Here's an [example conversation](https://opencode.ai/s/4XP1fce5) with OpenCode.
 
 ---
 
 ## Customize
 
-And that's it! You are now a pro at using OpenCode.
-
-To make it your own, we recommend [picking a theme](/docs/themes), [customizing the keybinds](/docs/keybinds), [configuring code formatters](/docs/formatters), [creating custom commands](/docs/commands), or playing around with the [OpenCode config](/docs/config).
+अब आप OpenCode को अपनी पसंद के अनुसार customize कर सकते हैं—जैसे themes चुनना, keybinds बदलना, formatters कॉन्फ़िगर करना, custom commands बनाना, या OpenCode config के साथ प्रयोग करना।
