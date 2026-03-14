@@ -1,51 +1,22 @@
 ---
 title: Windows और WSL
-description: Windows Subsystem for Linux में OpenCode का उपयोग।
----
-
-विंडोज़ पर OpenCode के लिए WSL अनुशंसित है।
-
+description: WSL में OpenCode।
 ---
 
 ## WSL स्थापित करें
 
-1. PowerShell को व्यवस्थाक के रूप में खोलें
-2. चलाएं: `wsl --install`
+```powershell
+wsl --install
+```
 
----
-
-## OpenCode इंस्टॉल करें
-
-WSL में:
+## OpenCode इंस्टॉल
 
 ```bash
 curl -fsSL https://opencode.ai/install | bash
 ```
 
-या:
-
-```bash
-npm install -g opencode-ai
-```
-
----
-
 ## टर्मिनल
 
-WSL के लिए अनुशंसित terminals:
 - Windows Terminal
 - Alacritty
-- Kitty (WSLg के साथ)
-
----
-
-## समस्याएं
-
-### Display issues
-
-- WSLg-enabled terminal का उपयोग करें
-- DISPLAY variable सेट है यह सुनिश्चित करें
-
-### Performance
-
-- WSL2 का उपयोग करें (WSL1 से बेहतर प्रदर्शन)
+- WSLg-enabled terminals
