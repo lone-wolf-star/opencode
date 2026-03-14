@@ -1,55 +1,25 @@
 ---
 title: थीम्स
-description: बिल्ट-इन थीम चुनें या अपनी परिभाषित करें।
+description: बिल्ट-इन या कस्टम थीम।
 ---
 
-आप कई बिल्ट-इन थीम्स में से एक चुन सकते हैं, या अपनी कस्टम थीम परिभाषित कर सकते हैं।
+## बिल्ट-इन
 
-डिफ़ॉल्ट रूप से, OpenCode अपनी `opencode` थीम का उपयोग करता है।
-
----
-
-## बिल्ट-इन थीम्स
-
-| नाम | विवरण |
-|------|--------|
-| system | Terminal की background color के अनुसार adapt होता है |
-| tokyonight | TokyoNight theme पर आधारित |
-| catppuccin | Catppuccin theme पर आधारित |
-| gruvbox | Gruvbox theme पर आधारित |
-| nord | Nord theme पर आधारित |
-| one-dark | Atom One Dark theme पर आधारित |
+- system, tokyonight, catppuccin
+- gruvbox, nord, one-dark
 
 ---
 
-## थीम उपयोग करें
+## उपयोग
 
-`/theme` कमांड से थीम चुनें:
+`/theme` या:
 
 ```json
-{
-  "theme": "tokyonight"
-}
+{"theme": "tokyonight"}
 ```
 
 ---
 
-## कस्टम थीम्स
+## कस्टम
 
-JSON format में थीम बनाएं:
-
-```json
-{
-  "$schema": "https://opencode.ai/theme.json",
-  "theme": {
-    "primary": { "dark": "#88C0D0", "light": "#5E81AC" },
-    "error": { "dark": "#BF616A", "light": "#BF616A" },
-    "text": { "dark": "#D8DEE9", "light": "#2E3440" }
-  }
-}
-```
-
-Themes इन स्थानों से load होते हैं:
-1. Built-in themes
-2. `~/.config/opencode/themes/`
-3. `.opencode/themes/`
+`~/.config/opencode/themes/my-theme.json`
