@@ -1,0 +1,52 @@
+---
+title: नियम
+description: OpenCode के लिए कस्टम निर्देश सेट करें।
+---
+
+आप `AGENTS.md` फ़ाइल बनाकर OpenCode को कस्टम निर्देश प्रदान कर सकते हैं।
+
+---
+
+## प्रारंभ करें
+
+`/init` कमांड चलाकर नई `AGENTS.md` फ़ाइल बनाएं।
+
+:::tip
+आपको अपने प्रोजेक्ट की `AGENTS.md` फ़ाइल को Git में commit करना चाहिए।
+:::
+
+---
+
+## प्रकार
+
+### Project
+
+अपने प्रोजेक्ट root में `AGENTS.md` रखें।
+
+### Global
+
+`~/.config/opencode/AGENTS.md` में वैश्विक नियम रखें।
+
+---
+
+## कस्टम निर्देश
+
+अपने `opencode.json` में कस्टम निर्देश फ़ाइलें निर्दिष्ट करें:
+
+```json
+{
+  "instructions": ["CONTRIBUTING.md", "docs/guidelines.md"]
+}
+```
+
+---
+
+## बाहरी फ़ाइलें reference करें
+
+`opencode.json` में `instructions` field का उपयोग करें:
+
+```json
+{
+  "instructions": ["docs/development-standards.md", "test/testing-guidelines.md"]
+}
+```
