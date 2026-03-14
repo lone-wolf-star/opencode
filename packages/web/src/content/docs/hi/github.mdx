@@ -1,0 +1,54 @@
+---
+title: GitHub
+description: GitHub issues और pull-requests में OpenCode का उपयोग करें।
+---
+
+OpenCode आपके GitHub वर्कफ़्लो के साथ इंटीग्रेट होता है। अपने comment में `/opencode` या `/oc` mention करें।
+
+---
+
+## फीचर्स
+
+- **Issues triage**: OpenCode से issue देखने और समझाने के लिए कहें
+- **Fix और implement**: Issue fix करने या feature implement करने के लिए कहें। यह एक नई branch में काम करेगा और PR submit करेगा।
+- **सुरक्षित**: OpenCode आपके GitHub runners के अंदर चलता है
+
+---
+
+## इंस्टॉल
+
+```bash
+opencode github install
+```
+
+यह GitHub app install करने, workflow बनाने, और secrets सेट अप करने में मार्गदर्शन करेगा।
+
+---
+
+## कॉन्फ़िगर
+
+- `model`: OpenCode के साथ उपयोग करने के लिए मॉडल। आवश्यक।
+- `agent`: उपयोग करने के लिए एजेंट।
+- `share`: OpenCode सत्र share करना है या नहीं।
+
+---
+
+## उदाहरण
+
+### Issue समझाएं
+
+```txt
+/opencode explain this issue
+```
+
+### Issue fix करें
+
+```txt
+/opencode fix this
+```
+
+### PR review करें
+
+```txt
+Delete the attachment from S3 when the note is removed /oc
+```
