@@ -1,10 +1,6 @@
 ---
 title: वेब
-description: OpenCode वेब इंटरफ़ेस।
----
-
-OpenCode एक वेब इंटरफ़ेस भी प्रदान करता है।
-
+description: वेब इंटरफ़ेस।
 ---
 
 ## शुरू करें
@@ -13,24 +9,8 @@ OpenCode एक वेब इंटरफ़ेस भी प्रदान क
 opencode web
 ```
 
-यह HTTP सर्वर शुरू करता है और OpenCode तक पहुंचने के लिए एक web browser खोलता है।
-
----
-
 ## विकल्प
 
-| फ्लैग | विवरण | डिफ़ॉल्ट |
-|--------|--------|-----------|
-| `--port` | पोर्ट | 4096 |
-| `--hostname` | होस्टनेम | 127.0.0.1 |
-| `--cors` | CORS origins | [] |
-
----
-
-## प्रमाणीकरण
-
-HTTP basic auth के लिए:
-
-```bash
-OPENCODE_SERVER_PASSWORD=your-password opencode web
-```
+- `--port`: पोर्ट (डिफ़ॉल्ट 4096)
+- `--hostname`: होस्टनेम
+- `--cors`: CORS origins
