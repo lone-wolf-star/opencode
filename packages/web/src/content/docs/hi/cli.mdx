@@ -3,142 +3,23 @@ title: CLI
 description: OpenCode CLI विकल्प और कमांड।
 ---
 
-OpenCode CLI डिफ़ॉल्ट रूप से TUI शुरू करता है:
+## TUI शुरू करें
 
 ```bash
 opencode
 ```
 
-प्रोग्रामेटिक रूप से इंटरैक्ट करने के लिए कमांड:
-
-```bash
-opencode run "Explain how closures work in JavaScript"
-```
-
----
-
-## tui
-
-TUI शुरू करें:
-
-```bash
-opencode [project]
-```
-
-### फ्लैग्स
-
-| फ्लैग | छोटा | विवरण |
-|--------|------|--------|
-| `--continue` | `-c` | पिछला सत्र जारी रखें |
-| `--session` | `-s` | जारी रखने के लिए सत्र ID |
-| `--model` | `-m` | प्रयोग करने के लिए मॉडल |
-| `--port` | पोर्ट | |
-
----
-
 ## कमांड्स
 
-### auth
+- `opencode run "prompt"` - गैर-इंटरैक्टिव मोड
+- `opencode serve` - HTTP सर्वर
+- `opencode web` - वेब इंटरफ़ेस
+- `opencode auth` - क्रेडेंशियल मैनेज
+- `opencode models` - मॉडल सूची
+- `opencode upgrade` - अपडेट
 
-प्रोवाइडर के लिए क्रेडेंशियल मैनेज करें:
+## फ्लैग्स
 
-```bash
-opencode auth login
-opencode auth list
-opencode auth logout
-```
-
-### mcp
-
-MCP सर्वर मैनेज करें:
-
-```bash
-opencode mcp add
-opencode mcp list
-opencode mcp auth <name>
-```
-
-### models
-
-उपलब्ध मॉडल सूचीबद्ध करें:
-
-```bash
-opencode models
-opencode models anthropic
-opencode models --refresh
-```
-
-### run
-
-गैर-इंटरैक्टिव मोड में चलाएं:
-
-```bash
-opencode run "Explain async/await in JavaScript"
-```
-
-### serve
-
-headless HTTP सर्वर शुरू करें:
-
-```bash
-opencode serve --port 4096
-```
-
-### session
-
-सत्र मैनेज करें:
-
-```bash
-opencode session list
-```
-
-### stats
-
-टोकन उपयोग और लागत दिखाएं:
-
-```bash
-opencode stats
-```
-
-### web
-
-वेब इंटरफ़ेस के साथ सर्वर शुरू करें:
-
-```bash
-opencode web
-```
-
-### acp
-
-ACP सर्वर शुरू करें:
-
-```bash
-opencode acp
-```
-
-### uninstall
-
-OpenCode अनइंस्टॉल करें:
-
-```bash
-opencode uninstall
-```
-
-### upgrade
-
-अपडेट करें:
-
-```bash
-opencode upgrade
-opencode upgrade v0.1.48
-```
-
----
-
-## वैश्विक फ्लैग्स
-
-| फ्लैग | छोटा | विवरण |
-|--------|------|--------|
-| `--help` | `-h` | मदद दिखाएं |
-| `--version` | `-v` | संस्करण संख्या प्रिंट करें |
-| `--log-level` | | लॉग स्तर (DEBUG, INFO, WARN, ERROR) |
+- `--continue, -c`: पिछला सत्र जारी रखें
+- `--model, -m`: मॉडल चुनें
+- `--port`: पोर्ट निर्दिष्ट करें
