@@ -1,0 +1,68 @@
+---
+title: फॉर्मेटर्स
+description: OpenCode भाषा-विशिष्ट फॉर्मेटर का उपयोग करता है।
+---
+
+OpenCode फ़ाइलें लिखने या संपादित करने के बाद स्वचालित रूप से फॉर्मेट करता है।
+
+---
+
+## बिल्ट-इन
+
+OpenCode कई बिल्ट-इन फॉर्मेटर के साथ आता है:
+
+| फॉर्मेटर | एक्सटेंशन |
+|----------|-----------|
+| prettier | .js, .ts, .jsx, .tsx, .html, .css |
+| ruff | .py, .pyi |
+| rustfmt | .rs |
+| gofmt | .go |
+| prettier | .json, .yaml |
+| rubocop | .rb |
+
+---
+
+## कॉन्फ़िगर
+
+आप फॉर्मेटर कॉन्फ़िगर कर सकते हैं:
+
+```json
+{
+  "formatter": {}
+}
+```
+
+### फॉर्मेटर अक्षम करें
+
+सभी फॉर्मेटर अक्षम करें:
+
+```json
+{
+  "formatter": false
+}
+```
+
+विशिष्ट फॉर्मेटर अक्षम करें:
+
+```json
+{
+  "formatter": {
+    "prettier": {
+      "disabled": true
+    }
+  }
+}
+```
+
+### कस्टम फॉर्मेटर
+
+```json
+{
+  "formatter": {
+    "custom-formatter": {
+      "command": ["npx", "custom-formatter", "--write", "$FILE"],
+      "extensions": [".js", ".ts"]
+    }
+  }
+}
+```
