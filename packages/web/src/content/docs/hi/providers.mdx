@@ -1,0 +1,73 @@
+---
+title: प्रोवाइडर
+description: OpenCode में कोई भी LLM प्रोवाइडर उपयोग करें।
+---
+
+OpenCode 75+ LLM प्रोवाइडर का समर्थन करता है।
+
+---
+
+## जोड़ें
+
+प्रोवाइडर जोड़ने के लिए:
+
+1. `/connect` कमांड से API keys जोड़ें
+2. कॉन्फ़िग में प्रोवाइडर कॉन्फ़िगर करें
+
+---
+
+## OpenCode Zen
+
+OpenCode Zen OpenCode टीम द्वारा परीक्षण किए गए मॉडल की सूची है।
+
+1. `/connect` चलाएं, opencode चुनें
+2. API key कॉपी करें
+3. `/models` से मॉडल चुनें
+
+---
+
+## प्रोवाइडर
+
+### Anthropic
+
+1. `/connect` चलाएं, Anthropic चुनें
+2. API key दर्ज करें
+3. `/models` से मॉडल चुनें
+
+### OpenAI
+
+1. `/connect` चलाएं, OpenAI चुनें
+2. API key दर्ज करें या OAuth से authenticate करें
+3. `/models` से मॉडल चुनें
+
+### Google
+
+Vertex AI या Google AI Studio का उपयोग करें।
+
+### Amazon Bedrock
+
+AWS credentials कॉन्फ़िगर करें।
+
+---
+
+## कस्टम प्रोवाइडर
+
+किसी भी OpenAI-compatible प्रोवाइडर को जोड़ें:
+
+```json
+{
+  "provider": {
+    "myprovider": {
+      "npm": "@ai-sdk/openai-compatible",
+      "options": {
+        "baseURL": "https://api.myprovider.com/v1"
+      },
+      "models": {
+        "mymodel": {
+          "name": "My Model"
+        }
+      }
+    }
+  }
+}
+```
