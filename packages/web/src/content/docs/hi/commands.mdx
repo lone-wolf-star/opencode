@@ -1,0 +1,37 @@
+---
+title: कमांड्स
+description: दोहराए जाने वाले कार्यों के लिए कस्टम कमांड बनाएं।
+---
+
+कस्टम कमांड आपको प्रोम्प्ट निर्दिष्ट करने की अनुमति देते हैं।
+
+---
+
+## फ़ाइलें बनाएं
+
+`.opencode/commands/` में markdown फ़ाइलें:
+
+```md
+---
+description: Run tests with coverage
+agent: build
+---
+
+Run the full test suite with coverage report.
+```
+
+उपयोग: `/test`
+
+---
+
+## तर्क
+
+`$ARGUMENTS` placeholder का उपयोग करें:
+
+```md
+---
+description: Create component
+---
+
+Create React component named $ARGUMENTS
+```

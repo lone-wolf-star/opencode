@@ -1,0 +1,32 @@
+---
+title: प्लगइन
+description: OpenCode को विस्तारित करें।
+---
+
+## उपयोग
+
+```json
+{"plugin": ["opencode-helicone-session"]}
+```
+
+---
+
+## बनाएं
+
+```js
+export const MyPlugin = async ({ project, client, $ }) => {
+  return {
+    "tool.execute.before": async (input, output) => {
+      // hook code
+    }
+  }
+}
+```
+
+---
+
+## Events
+
+- session.idle
+- file.edited
+- tool.execute.before/after

@@ -1,0 +1,30 @@
+---
+title: MCP सर्वर
+description: Model Context Protocol।
+---
+
+## Local
+
+```json
+{
+  "mcp": {
+    "my-server": {
+      "type": "local",
+      "command": ["npx", "-y", "@modelcontextprotocol/server-everything"]
+    }
+  }
+}
+```
+
+## Remote
+
+```json
+{
+  "mcp": {
+    "my-remote": {
+      "type": "remote",
+      "url": "https://my-mcp-server.com"
+    }
+  }
+}
+```

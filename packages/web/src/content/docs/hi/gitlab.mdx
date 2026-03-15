@@ -1,0 +1,21 @@
+---
+title: GitLab
+description: GitLab में OpenCode का उपयोग।
+---
+
+## GitLab CI
+
+```yaml
+include:
+  - component: $CI_SERVER_FQDN/nagyv/gitlab-opencode/opencode@2
+    inputs:
+      auth_json: $OPENCODE_AUTH_JSON
+```
+
+## GitLab Duo
+
+Comment में `@opencode` mention करें।
+
+```
+@opencode explain this issue
+```

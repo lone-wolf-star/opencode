@@ -1,0 +1,28 @@
+---
+title: SDK
+description: Type-safe JS क्लाइंट।
+---
+
+## इंस्टॉल
+
+```bash
+npm install @opencode-ai/sdk
+```
+
+---
+
+## क्लाइंट
+
+```js
+import { createOpencode } from "@opencode-ai/sdk"
+const { client } = await createOpencode()
+```
+
+---
+
+## APIs
+
+```js
+const sessions = await client.session.list()
+await client.session.prompt({ path: { id }, body: { parts: [...] } })
+```

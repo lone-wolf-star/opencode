@@ -1,0 +1,36 @@
+---
+title: कॉन्फ़िग
+description: OpenCode JSON कॉन्फ़िग का उपयोग करना।
+---
+
+OpenCode JSON और JSONC (comments सहित) दोनों का समर्थन करता है।
+
+---
+
+## स्थान
+
+1. Remote कॉन्फ़िग
+2. Global: `~/.config/opencode/opencode.json`
+3. Project: `opencode.json`
+
+---
+
+## विकल्प
+
+- `theme`: थीम चुनें
+- `model`: डिफ़ॉल्ट मॉडल
+- `share`: शेयर मोड (manual/auto/disabled)
+- `permission`: अनुमति नियंत्रण
+- `agent`: एजेंट कॉन्फ़िग
+- `lsp`: LSP सर्वर
+- `mcp`: MCP सर्वर
+
+---
+
+## Env vars
+
+`{env:VARIABLE_NAME}` का उपयोग करें:
+
+```json
+{"model": "{env:OPENCODE_MODEL}"}
+```

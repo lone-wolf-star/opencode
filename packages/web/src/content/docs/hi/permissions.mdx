@@ -1,0 +1,31 @@
+---
+title: अनुमतियाँ
+description: अनुमति नियंत्रण।
+---
+
+## कार्रवाई
+
+- `allow`: बिना पूछे चलाएं
+- `ask`: अनुमति के लिए पूछें
+- `deny`: ब्लॉक करें
+
+---
+
+## कॉन्फ़िगर
+
+```json
+{
+  "permission": {
+    "*": "ask",
+    "bash": "allow"
+  }
+}
+```
+
+---
+
+## उपलब्ध
+
+- read, edit, glob, grep
+- list, bash, task
+- webfetch, websearch
